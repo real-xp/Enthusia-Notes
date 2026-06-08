@@ -9,6 +9,8 @@ Please note that posting anything that includes decompiled code is not allowed.
 - [Docs (Internal technical information)](docs/docs.md)
   - [RNG](docs/rng.md)
     - [RNG Manipulation](docs/rng_manipulation.md)
+  - [Speedrunning Guide](docs/speedrunning_guide.md)
+  - [Tuning Guide](docs/tuning_guide.md)
   - [Other Notes](docs/other_notes.md)
 - [Tools (Related to other game information and tutorials)](tools/tools.md)
   - [Cheats](tools/cheats.md)
