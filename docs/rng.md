@@ -39,6 +39,25 @@ It is used in a lot of scenarios like
 - Camera Shake
 - Other places
 
+## Pseudocode
+Note that this piece of code is a recreation of what it looks like, and is not actually the decompiled code
+
+```c++
+#include <cstdint>
+
+uint32_t seed = 0x00; // over simplification of the seed, is actually part of an array
+
+uint64_t mult(uint32_t a, uint64_t b) {
+    return (uint64_t) a*b; // just a 32x64 -> 64 bit multiplication
+}
+
+uint64_t LCG64() {
+  // 6364136223846793005 is Knuth's MMIX constant possibly
+    uint64_t rng = mult((uint32_t)seed, 6364136223846793005ULL) + 1;
+    return (rng >> 32) & 0x7FFFFFFF; // returns [0, 2147483647]
+}
+```
+
 ## Seed
 The way the game implements LCG is very weird. **IT STORES A GLOBAL SEED THAT IS CHANGED BY A LOT OF FUNCTIONS, FOR A LOT OF DIFFERENT PURPOSES, EVERY FEW FRAMES, (WHICH WILL BE LISTED BELOW). This is SIMILAR or rather basically the SAME as games like SUPER MARIO 64**
 
@@ -69,5 +88,3 @@ The seed is kind of stored as a state in save file near `0002E960` (Viewable in 
 
 # RNG Manipulation
 A detailed RNG Manipulation is in [this document](rng_manipulation.md)
-
-
