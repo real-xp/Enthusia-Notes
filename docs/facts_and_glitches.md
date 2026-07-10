@@ -1,6 +1,8 @@
 # Facts And Glitches
 This compiles all the possible facts and glitches I and a lot of people across mutliple years found for this game.
 
+Please note that the images here are compressed. Original images can be found on the internet.
+
 # Contents
 - [Facts And Glitches](#facts-and-glitches)
 - [Contents](#contents)
@@ -69,6 +71,14 @@ This compiles all the possible facts and glitches I and a lot of people across m
   - [Removed "Championships"](#removed-championships)
   - [Removed Enthusia Life Features](#removed-enthusia-life-features)
   - [Removed And Changed Maps](#removed-and-changed-maps)
+  - [Konami Asset Disks](#konami-asset-disks)
+    - [TGS 2004](#tgs-2004)
+      - [SCREENSHOTS](#screenshots)
+      - [LOGO](#logo)
+    - [E3 2004](#e3-2004)
+      - [ARTWORKS](#artworks)
+      - [LOGO](#logo-1)
+      - [SCREENSHOTS](#screenshots-1)
 - [Map Facts](#map-facts)
   - [Rev City](#rev-city)
   - [Route de La Seine](#route-de-la-seine)
@@ -999,6 +1009,43 @@ It looks like there were removed or changed maps like
 - `"定常円旋回"` = `"Steady-state circular turning"` = `"SS CIRCLE"`
 - `"挙動デモ"` = `"Behavioral demo"` = `"DEMO RUN"` = Probably debug stuff
 - `"MINI CIRCUIT"`
+
+## Konami Asset Disks
+There are several asset disks during time of E3 and TGS 2004. Konami also made asset disks and released screenshots, PR documents, and original Logos for many games, including Enthusia. 
+These disks were ripped and uploaded on HiddenPalace.org. Here are some screenshots from them - 
+
+### TGS 2004
+#### SCREENSHOTS
+![ALF147_VWGOL_AUDTTC_01_retuch_01](../assets/images/facts-and-glitches/TGS2004_Press/ALF147_VWGOL_AUDTTC_01_retuch_01.jpg)
+![MITLAN_RENALP_02_retuch_04](../assets/images/facts-and-glitches/TGS2004_Press/MITLAN_RENALP_02_retuch_04.bmp)
+![R390_0002_retuch_01](../assets/images/facts-and-glitches/TGS2004_Press/R390_0002_retuch_01.bmp)
+
+#### LOGO
+This logo is the original press logo and can be opened in program like Illustrator (8.0 or above) or any vector editing program.
+
+[LOGO](../assets/logo/ENTHUSIAロゴお渡し用.eps)
+
+### E3 2004
+#### ARTWORKS
+![Artwork1](../assets/images/facts-and-glitches/E32004_Press/Artworks/Enthusia_Artwork_01.jpg)
+![Artwork2](../assets/images/facts-and-glitches/E32004_Press/Artworks/Enthusia_Artwork_02.jpg)
+![Artwork3](../assets/images/facts-and-glitches/E32004_Press/Artworks/Enthusia_Artwork_03.jpg)
+
+#### LOGO
+![Logo1](../assets/images/facts-and-glitches/E32004_Press/Logo/Enthusia_Logo_01.jpg)
+
+#### SCREENSHOTS
+![Screenshot1](../assets/images/facts-and-glitches/E32004_Press/Screenshots/Enthusia_Screenshot_01.jpg)
+![Screenshot2](../assets/images/facts-and-glitches/E32004_Press/Screenshots/Enthusia_Screenshot_02.jpg)
+![Screenshot3](../assets/images/facts-and-glitches/E32004_Press/Screenshots/Enthusia_Screenshot_03.jpg)
+![Screenshot4](../assets/images/facts-and-glitches/E32004_Press/Screenshots/Enthusia_Screenshot_04.jpg)
+![Screenshot5](../assets/images/facts-and-glitches/E32004_Press/Screenshots/Enthusia_Screenshot_05.jpg)
+![Screenshot6](../assets/images/facts-and-glitches/E32004_Press/Screenshots/Enthusia_Screenshot_06.jpg)
+![Screenshot7](../assets/images/facts-and-glitches/E32004_Press/Screenshots/Enthusia_Screenshot_07.jpg)
+![Screenshot8](../assets/images/facts-and-glitches/E32004_Press/Screenshots/Enthusia_Screenshot_08.jpg)
+![Screenshot9](../assets/images/facts-and-glitches/E32004_Press/Screenshots/Enthusia_Screenshot_09.jpg)
+![Screenshot10](../assets/images/facts-and-glitches/E32004_Press/Screenshots/Enthusia_Screenshot_10.jpg)
+![Screenshot11](../assets/images/facts-and-glitches/E32004_Press/Screenshots/Enthusia_Screenshot_11.jpg)
 
 # Map Facts
 ## Rev City
