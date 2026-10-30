@@ -10,7 +10,9 @@ A lot of this was found on the internet like japanese archives or by digging thr
 
 It takes a long time for me to update this repo usually.
 
-Please note that posting anything that includes decompiled code is not allowed.
+Please note that posting anything that includes decompiled code is not allowed. Function references are allowed. Please specify which decompiler you used.
+
+AI has been used in some research for some particular areas, where it was hard to find patterns by just normal pattern hunting, mainly `GS` data.
 
 ## Table Of Contents
 - Docs (Internal technical information)
@@ -23,6 +25,8 @@ Please note that posting anything that includes decompiled code is not allowed.
   - [Tuning Guide](https://docs.google.com/document/d/1uSfw1M4AwCnkd-VSn6UspavUmq7nnC9nlKiVj8PUKOA) - Link to Azullia and mrxbas's Tuning Guide
   - [Ranking Points](docs/ranking_points.md) - Document on ranking points
   - [Maps](docs/map_detail.md) - Document on internal Map data
+  - [FC87 File](docs/fc87_file.md) - Document on internal `fc87` container
+  - [Car File](docs/car_file.md) - Document on car model data
   - [Cars](docs/car_detail.md) - Document on internal Car detail, excluding specdb
   - [Other Notes](docs/other_notes.md)
 - Tools (Related to other game information and tutorials)
