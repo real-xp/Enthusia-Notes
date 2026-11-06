@@ -89,7 +89,7 @@ Also in terms of brand
 - `ポルシェ` = `Porsche`
 
 ## Removed Features
-Read [facts_and_glitces.md](facts_and_glitces.md#emoved-prize-race-mode) for more information.
+Read [facts_and_glitches.md](./facts_and_glitches.md#removed-prize-race-mode) for more information.
 
 ## Main Menu Code
 The game by default goes to `FREE RACE` mode. This is because the menu id is hardcoded.
