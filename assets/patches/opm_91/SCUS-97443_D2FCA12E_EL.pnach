@@ -1,0 +1,19 @@
+gametitle=Enthusia Professional Racing - OPM Demo Disc 91 (SCUS-97443) - Prize Race
+author=kingjack, realxp, AI assistance
+
+// title menu: 9 (Free Run) -> 10 (Prize Race)
+patch=1,EE,2017A774,extended,2410000B
+
+// Same class of bug as PR: EL heap spec at 0x32CA00 is {2MB,0x600,25MB,0x80}; shrink it and boot with 0xB.
+patch=1,EE,2032CA00,extended,00100000
+patch=1,EE,2032CA08,extended,01180000
+
+// disable the demo-disc watchdog that kicks you back to the OPM menu after ~5 min
+patch=1,EE,201FA0CC,extended,1000000A
+
+// D3turn_EL_actionselect_t::hello (0x147EF8) greys out menu item 0 (RACE) when
+//   state[0x18] != 0   OR   state[0x1C] == 0
+// 0x147FD0 bnel v0,zero,... -> nop        (ignore the [0x18] test)
+// 0x147FDC bnez v0,0x147FF8 -> b 0x147FF8 (ignore the [0x1C] test)
+patch=1,EE,20147FD0,extended,00000000
+patch=1,EE,20147FDC,extended,10000006

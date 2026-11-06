@@ -1,0 +1,568 @@
+gametitle=Enthusia Professional Racing - OPM Demo Disc 91 (SCUS-97443) - Prize Race
+author=kingjack, realxp, AI assistance
+
+// title menu: 9 (Free Run) -> 10 (Prize Race)
+patch=1,EE,2017A774,extended,2410000A
+
+// Prize Race heap spec {3MB,0x600,27MB,0x80} -> {1MB,0x600,17.5MB,0x80}; the demo pool is only 20.75MB
+// (this is the real cause of the 0 FPS hang: 27MB alloc returns NULL)
+patch=1,EE,2032E2D0,extended,00100000
+patch=1,EE,2032E2D8,extended,01180000
+
+// disable the demo-disc watchdog that kicks you back to the OPM menu after ~5 min
+patch=1,EE,201FA0CC,extended,1000000A
+
+// ================= expanded event table: all 19 records rewritten =================
+// Round N plays record (N-1)%19 (state+8 is the round counter), so every round is a different race.
+// Only the 15 demo cars and 3 demo courses are used. 6 cars per grid so the 1st/2nd/3rd payout
+// schedule (x1.0 / x0.6 / x0.2 of bet*odds) applies.
+// ---- Round 1 (record 0): course 115, 2 laps
+//      MINI Cooper S[30] x5.4, Saxo VTS[45] x3.0, Fiat 500 F[40] x7.1, smart fortwo[50] x6.9, Alfa 147 GTA[55] x1.5, Golf R32[35] x2.3
+patch=1,EE,20337AB8,extended,00000073   // course
+patch=1,EE,20337ABC,extended,00000002   // laps
+patch=1,EE,20337AC4,extended,00000056
+patch=1,EE,20337AC8,extended,000000A1
+patch=1,EE,20337ACC,extended,000000C7
+patch=1,EE,20337AD0,extended,00000067
+patch=1,EE,20337AD4,extended,000000F5
+patch=1,EE,20337AD8,extended,00000115
+patch=1,EE,20337ADC,extended,00000000
+patch=1,EE,20337AE0,extended,00000000
+patch=1,EE,20337AE4,extended,00000000
+patch=1,EE,20337AE8,extended,00000000
+patch=1,EE,20337AEC,extended,00000000
+patch=1,EE,20337AF0,extended,00000000
+patch=1,EE,20337AF4,extended,40ACCCCD
+patch=1,EE,20337AF8,extended,40400000
+patch=1,EE,20337AFC,extended,40E33333
+patch=1,EE,20337B00,extended,40DCCCCD
+patch=1,EE,20337B04,extended,3FC00000
+patch=1,EE,20337B08,extended,40133333
+patch=1,EE,20337B0C,extended,0000001E
+patch=1,EE,20337B10,extended,0000002D
+patch=1,EE,20337B14,extended,00000028
+patch=1,EE,20337B18,extended,00000032
+patch=1,EE,20337B1C,extended,00000037
+patch=1,EE,20337B20,extended,00000023
+
+// ---- Round 2 (record 1): course 7, 3 laps
+//      Roadster RS[55] x2.8, Lotus Elise 111S[60] x1.7, Audi TT 3.2[35] x4.1, Golf R32[45] x3.4, Alfa 147 GTA[40] x4.5, MINI Cooper S[50] x5.7
+patch=1,EE,20337B24,extended,00000007   // course
+patch=1,EE,20337B28,extended,00000003   // laps
+patch=1,EE,20337B30,extended,00000003
+patch=1,EE,20337B34,extended,000000D3
+patch=1,EE,20337B38,extended,00000100
+patch=1,EE,20337B3C,extended,00000115
+patch=1,EE,20337B40,extended,000000F5
+patch=1,EE,20337B44,extended,00000056
+patch=1,EE,20337B48,extended,00000000
+patch=1,EE,20337B4C,extended,00000000
+patch=1,EE,20337B50,extended,00000000
+patch=1,EE,20337B54,extended,00000000
+patch=1,EE,20337B58,extended,00000000
+patch=1,EE,20337B5C,extended,00000000
+patch=1,EE,20337B60,extended,40333333
+patch=1,EE,20337B64,extended,3FD9999A
+patch=1,EE,20337B68,extended,40833333
+patch=1,EE,20337B6C,extended,4059999A
+patch=1,EE,20337B70,extended,40900000
+patch=1,EE,20337B74,extended,40B66666
+patch=1,EE,20337B78,extended,00000037
+patch=1,EE,20337B7C,extended,0000003C
+patch=1,EE,20337B80,extended,00000023
+patch=1,EE,20337B84,extended,0000002D
+patch=1,EE,20337B88,extended,00000028
+patch=1,EE,20337B8C,extended,00000032
+
+// ---- Round 3 (record 2): course 20, 3 laps
+//      Golf R32[45] x2.8, Alfa 147 GTA[55] x2.2, Saxo VTS[60] x3.1, MINI Cooper S[50] x4.7, Audi TT 3.2[40] x2.9, Roadster RS[35] x4.9
+patch=1,EE,20337B90,extended,00000014   // course
+patch=1,EE,20337B94,extended,00000003   // laps
+patch=1,EE,20337B9C,extended,00000115
+patch=1,EE,20337BA0,extended,000000F5
+patch=1,EE,20337BA4,extended,000000A1
+patch=1,EE,20337BA8,extended,00000056
+patch=1,EE,20337BAC,extended,00000100
+patch=1,EE,20337BB0,extended,00000003
+patch=1,EE,20337BB4,extended,00000000
+patch=1,EE,20337BB8,extended,00000000
+patch=1,EE,20337BBC,extended,00000000
+patch=1,EE,20337BC0,extended,00000000
+patch=1,EE,20337BC4,extended,00000000
+patch=1,EE,20337BC8,extended,00000000
+patch=1,EE,20337BCC,extended,40333333
+patch=1,EE,20337BD0,extended,400CCCCD
+patch=1,EE,20337BD4,extended,40466666
+patch=1,EE,20337BD8,extended,40966666
+patch=1,EE,20337BDC,extended,4039999A
+patch=1,EE,20337BE0,extended,409CCCCD
+patch=1,EE,20337BE4,extended,0000002D
+patch=1,EE,20337BE8,extended,00000037
+patch=1,EE,20337BEC,extended,0000003C
+patch=1,EE,20337BF0,extended,00000032
+patch=1,EE,20337BF4,extended,00000028
+patch=1,EE,20337BF8,extended,00000023
+
+// ---- Round 4 (record 3): course 115, 2 laps
+//      Roadster RS[45] x2.3, Lotus Elise 111S[35] x2.1, MINI Cooper S[50] x3.1, Saxo VTS[55] x2.6, smart fortwo[60] x5.7, Fiat 500 F[40] x9.3
+patch=1,EE,20337BFC,extended,00000073   // course
+patch=1,EE,20337C00,extended,00000002   // laps
+patch=1,EE,20337C08,extended,00000003
+patch=1,EE,20337C0C,extended,000000D3
+patch=1,EE,20337C10,extended,00000056
+patch=1,EE,20337C14,extended,000000A1
+patch=1,EE,20337C18,extended,00000067
+patch=1,EE,20337C1C,extended,000000C7
+patch=1,EE,20337C20,extended,00000000
+patch=1,EE,20337C24,extended,00000000
+patch=1,EE,20337C28,extended,00000000
+patch=1,EE,20337C2C,extended,00000000
+patch=1,EE,20337C30,extended,00000000
+patch=1,EE,20337C34,extended,00000000
+patch=1,EE,20337C38,extended,40133333
+patch=1,EE,20337C3C,extended,40066666
+patch=1,EE,20337C40,extended,40466666
+patch=1,EE,20337C44,extended,40266666
+patch=1,EE,20337C48,extended,40B66666
+patch=1,EE,20337C4C,extended,4114CCCD
+patch=1,EE,20337C50,extended,0000002D
+patch=1,EE,20337C54,extended,00000023
+patch=1,EE,20337C58,extended,00000032
+patch=1,EE,20337C5C,extended,00000037
+patch=1,EE,20337C60,extended,0000003C
+patch=1,EE,20337C64,extended,00000028
+
+// ---- Round 5 (record 4): course 7, 3 laps
+//      Lotus Elise 111S[20] x9.9, Lotus Elise 111S[50] x5.4, Lotus Elise 111S[70] x2.6, Lotus Elise 111S[40] x8.5, Lotus Elise 111S[90] x1.6, Lotus Elise 111S[80] x1.9
+patch=1,EE,20337C68,extended,00000007   // course
+patch=1,EE,20337C6C,extended,00000003   // laps
+patch=1,EE,20337C74,extended,000000D3
+patch=1,EE,20337C78,extended,000000D3
+patch=1,EE,20337C7C,extended,000000D3
+patch=1,EE,20337C80,extended,000000D3
+patch=1,EE,20337C84,extended,000000D3
+patch=1,EE,20337C88,extended,000000D3
+patch=1,EE,20337C8C,extended,00000003
+patch=1,EE,20337C90,extended,00000000
+patch=1,EE,20337C94,extended,00000006
+patch=1,EE,20337C98,extended,00000004
+patch=1,EE,20337C9C,extended,00000001
+patch=1,EE,20337CA0,extended,00000005
+patch=1,EE,20337CA4,extended,411E6666
+patch=1,EE,20337CA8,extended,40ACCCCD
+patch=1,EE,20337CAC,extended,40266666
+patch=1,EE,20337CB0,extended,41080000
+patch=1,EE,20337CB4,extended,3FCCCCCD
+patch=1,EE,20337CB8,extended,3FF33333
+patch=1,EE,20337CBC,extended,00000014
+patch=1,EE,20337CC0,extended,00000032
+patch=1,EE,20337CC4,extended,00000046
+patch=1,EE,20337CC8,extended,00000028
+patch=1,EE,20337CCC,extended,0000005A
+patch=1,EE,20337CD0,extended,00000050
+
+// ---- Round 6 (record 5): course 20, 3 laps
+//      Audi TT 3.2[60] x3.2, Lotus Elise 111S[55] x3.2, Roadster RS[70] x3.1, Golf R32[65] x3.2, Alfa 147 GTA[45] x8.0, V12 Vanquish[50] x2.0
+patch=1,EE,20337CD4,extended,00000014   // course
+patch=1,EE,20337CD8,extended,00000003   // laps
+patch=1,EE,20337CE0,extended,00000100
+patch=1,EE,20337CE4,extended,000000D3
+patch=1,EE,20337CE8,extended,00000003
+patch=1,EE,20337CEC,extended,00000115
+patch=1,EE,20337CF0,extended,000000F5
+patch=1,EE,20337CF4,extended,00000127
+patch=1,EE,20337CF8,extended,00000000
+patch=1,EE,20337CFC,extended,00000000
+patch=1,EE,20337D00,extended,00000000
+patch=1,EE,20337D04,extended,00000000
+patch=1,EE,20337D08,extended,00000000
+patch=1,EE,20337D0C,extended,00000000
+patch=1,EE,20337D10,extended,404CCCCD
+patch=1,EE,20337D14,extended,404CCCCD
+patch=1,EE,20337D18,extended,40466666
+patch=1,EE,20337D1C,extended,404CCCCD
+patch=1,EE,20337D20,extended,41000000
+patch=1,EE,20337D24,extended,40000000
+patch=1,EE,20337D28,extended,0000003C
+patch=1,EE,20337D2C,extended,00000037
+patch=1,EE,20337D30,extended,00000046
+patch=1,EE,20337D34,extended,00000041
+patch=1,EE,20337D38,extended,0000002D
+patch=1,EE,20337D3C,extended,00000032
+
+// ---- Round 7 (record 6): course 115, 2 laps
+//      V12 Vanquish[65] x1.4, Audi TT 3.2[70] x2.4, Lotus Elise 111S[45] x4.9, Roadster RS[60] x4.7, Golf R32[55] x4.8, Alfa 147 GTA[50] x6.5
+patch=1,EE,20337D40,extended,00000073   // course
+patch=1,EE,20337D44,extended,00000002   // laps
+patch=1,EE,20337D4C,extended,00000127
+patch=1,EE,20337D50,extended,00000100
+patch=1,EE,20337D54,extended,000000D3
+patch=1,EE,20337D58,extended,00000003
+patch=1,EE,20337D5C,extended,00000115
+patch=1,EE,20337D60,extended,000000F5
+patch=1,EE,20337D64,extended,00000000
+patch=1,EE,20337D68,extended,00000000
+patch=1,EE,20337D6C,extended,00000000
+patch=1,EE,20337D70,extended,00000000
+patch=1,EE,20337D74,extended,00000000
+patch=1,EE,20337D78,extended,00000000
+patch=1,EE,20337D7C,extended,3FB33333
+patch=1,EE,20337D80,extended,4019999A
+patch=1,EE,20337D84,extended,409CCCCD
+patch=1,EE,20337D88,extended,40966666
+patch=1,EE,20337D8C,extended,4099999A
+patch=1,EE,20337D90,extended,40D00000
+patch=1,EE,20337D94,extended,00000041
+patch=1,EE,20337D98,extended,00000046
+patch=1,EE,20337D9C,extended,0000002D
+patch=1,EE,20337DA0,extended,0000003C
+patch=1,EE,20337DA4,extended,00000037
+patch=1,EE,20337DA8,extended,00000032
+
+// ---- Round 8 (record 7): course 7, 3 laps
+//      CLK-DTM[55] x1.8, V12 Vanquish[75] x1.6, Audi TT 3.2[70] x3.9, Lotus Elise 111S[65] x4.0, Roadster RS[50] x9.9, Golf R32[60] x7.1
+patch=1,EE,20337DAC,extended,00000007   // course
+patch=1,EE,20337DB0,extended,00000003   // laps
+patch=1,EE,20337DB8,extended,00000130
+patch=1,EE,20337DBC,extended,00000127
+patch=1,EE,20337DC0,extended,00000100
+patch=1,EE,20337DC4,extended,000000D3
+patch=1,EE,20337DC8,extended,00000003
+patch=1,EE,20337DCC,extended,00000115
+patch=1,EE,20337DD0,extended,00000000
+patch=1,EE,20337DD4,extended,00000000
+patch=1,EE,20337DD8,extended,00000000
+patch=1,EE,20337DDC,extended,00000000
+patch=1,EE,20337DE0,extended,00000000
+patch=1,EE,20337DE4,extended,00000000
+patch=1,EE,20337DE8,extended,3FE66666
+patch=1,EE,20337DEC,extended,3FCCCCCD
+patch=1,EE,20337DF0,extended,4079999A
+patch=1,EE,20337DF4,extended,40800000
+patch=1,EE,20337DF8,extended,411E6666
+patch=1,EE,20337DFC,extended,40E33333
+patch=1,EE,20337E00,extended,00000037
+patch=1,EE,20337E04,extended,0000004B
+patch=1,EE,20337E08,extended,00000046
+patch=1,EE,20337E0C,extended,00000041
+patch=1,EE,20337E10,extended,00000032
+patch=1,EE,20337E14,extended,0000003C
+
+// ---- Round 9 (record 8): course 20, 3 laps
+//      V12 Vanquish[50] x3.1, CLK-DTM[65] x1.4, Audi TT 3.2[75] x3.1, Lotus Elise 111S[70] x3.2, Golf R32[60] x6.9, Alfa 147 GTA[55] x9.6
+patch=1,EE,20337E18,extended,00000014   // course
+patch=1,EE,20337E1C,extended,00000003   // laps
+patch=1,EE,20337E24,extended,00000127
+patch=1,EE,20337E28,extended,00000130
+patch=1,EE,20337E2C,extended,00000100
+patch=1,EE,20337E30,extended,000000D3
+patch=1,EE,20337E34,extended,00000115
+patch=1,EE,20337E38,extended,000000F5
+patch=1,EE,20337E3C,extended,00000000
+patch=1,EE,20337E40,extended,00000000
+patch=1,EE,20337E44,extended,00000000
+patch=1,EE,20337E48,extended,00000000
+patch=1,EE,20337E4C,extended,00000000
+patch=1,EE,20337E50,extended,00000000
+patch=1,EE,20337E54,extended,40466666
+patch=1,EE,20337E58,extended,3FB33333
+patch=1,EE,20337E5C,extended,40466666
+patch=1,EE,20337E60,extended,404CCCCD
+patch=1,EE,20337E64,extended,40DCCCCD
+patch=1,EE,20337E68,extended,4119999A
+patch=1,EE,20337E6C,extended,00000032
+patch=1,EE,20337E70,extended,00000041
+patch=1,EE,20337E74,extended,0000004B
+patch=1,EE,20337E78,extended,00000046
+patch=1,EE,20337E7C,extended,0000003C
+patch=1,EE,20337E80,extended,00000037
+
+// ---- Round 10 (record 9): course 115, 2 laps
+//      smart fortwo[100] x5.2, V12 Vanquish[60] x1.7, Audi TT 3.2[65] x3.1, Lotus Elise 111S[70] x2.3, Roadster RS[55] x6.8, Golf R32[60] x4.4
+patch=1,EE,20337E84,extended,00000073   // course
+patch=1,EE,20337E88,extended,00000002   // laps
+patch=1,EE,20337E90,extended,00000067
+patch=1,EE,20337E94,extended,00000127
+patch=1,EE,20337E98,extended,00000100
+patch=1,EE,20337E9C,extended,000000D3
+patch=1,EE,20337EA0,extended,00000003
+patch=1,EE,20337EA4,extended,00000115
+patch=1,EE,20337EA8,extended,00000000
+patch=1,EE,20337EAC,extended,00000000
+patch=1,EE,20337EB0,extended,00000000
+patch=1,EE,20337EB4,extended,00000000
+patch=1,EE,20337EB8,extended,00000000
+patch=1,EE,20337EBC,extended,00000000
+patch=1,EE,20337EC0,extended,40A66666
+patch=1,EE,20337EC4,extended,3FD9999A
+patch=1,EE,20337EC8,extended,40466666
+patch=1,EE,20337ECC,extended,40133333
+patch=1,EE,20337ED0,extended,40D9999A
+patch=1,EE,20337ED4,extended,408CCCCD
+patch=1,EE,20337ED8,extended,00000064
+patch=1,EE,20337EDC,extended,0000003C
+patch=1,EE,20337EE0,extended,00000041
+patch=1,EE,20337EE4,extended,00000046
+patch=1,EE,20337EE8,extended,00000037
+patch=1,EE,20337EEC,extended,0000003C
+
+// ---- Round 11 (record 10): course 7, 3 laps
+//      Audi R8 (2004)[65] x1.6, CLK-DTM[75] x1.8, V12 Vanquish[80] x2.2, Audi TT 3.2[55] x9.9, Lotus Elise 111S[70] x6.7, Roadster RS[60] x9.9
+patch=1,EE,20337EF0,extended,00000007   // course
+patch=1,EE,20337EF4,extended,00000003   // laps
+patch=1,EE,20337EFC,extended,00000162
+patch=1,EE,20337F00,extended,00000130
+patch=1,EE,20337F04,extended,00000127
+patch=1,EE,20337F08,extended,00000100
+patch=1,EE,20337F0C,extended,000000D3
+patch=1,EE,20337F10,extended,00000003
+patch=1,EE,20337F14,extended,00000000
+patch=1,EE,20337F18,extended,00000000
+patch=1,EE,20337F1C,extended,00000000
+patch=1,EE,20337F20,extended,00000000
+patch=1,EE,20337F24,extended,00000000
+patch=1,EE,20337F28,extended,00000000
+patch=1,EE,20337F2C,extended,3FCCCCCD
+patch=1,EE,20337F30,extended,3FE66666
+patch=1,EE,20337F34,extended,400CCCCD
+patch=1,EE,20337F38,extended,411E6666
+patch=1,EE,20337F3C,extended,40D66666
+patch=1,EE,20337F40,extended,411E6666
+patch=1,EE,20337F44,extended,00000041
+patch=1,EE,20337F48,extended,0000004B
+patch=1,EE,20337F4C,extended,00000050
+patch=1,EE,20337F50,extended,00000037
+patch=1,EE,20337F54,extended,00000046
+patch=1,EE,20337F58,extended,0000003C
+
+// ---- Round 12 (record 11): course 20, 3 laps
+//      787B[70] x4.0, GT-ONE[85] x1.7, R390 GT1[75] x2.5, Audi R8 (2004)[80] x2.3, CLK-DTM[65] x6.7, V12 Vanquish[60] x9.9
+patch=1,EE,20337F5C,extended,00000014   // course
+patch=1,EE,20337F60,extended,00000003   // laps
+patch=1,EE,20337F68,extended,00000011
+patch=1,EE,20337F6C,extended,0000000B
+patch=1,EE,20337F70,extended,0000010E
+patch=1,EE,20337F74,extended,00000162
+patch=1,EE,20337F78,extended,00000130
+patch=1,EE,20337F7C,extended,00000127
+patch=1,EE,20337F80,extended,00000000
+patch=1,EE,20337F84,extended,00000000
+patch=1,EE,20337F88,extended,00000000
+patch=1,EE,20337F8C,extended,00000000
+patch=1,EE,20337F90,extended,00000000
+patch=1,EE,20337F94,extended,00000000
+patch=1,EE,20337F98,extended,40800000
+patch=1,EE,20337F9C,extended,3FD9999A
+patch=1,EE,20337FA0,extended,40200000
+patch=1,EE,20337FA4,extended,40133333
+patch=1,EE,20337FA8,extended,40D66666
+patch=1,EE,20337FAC,extended,411E6666
+patch=1,EE,20337FB0,extended,00000046
+patch=1,EE,20337FB4,extended,00000055
+patch=1,EE,20337FB8,extended,0000004B
+patch=1,EE,20337FBC,extended,00000050
+patch=1,EE,20337FC0,extended,00000041
+patch=1,EE,20337FC4,extended,0000003C
+
+// ---- Round 13 (record 12): course 7, 3 laps
+//      R390 GT1[70] x2.8, GT-ONE[80] x1.8, 787B[85] x2.3, Audi R8 (2004)[60] x4.4, CLK-DTM[75] x4.1, V12 Vanquish[65] x9.9
+patch=1,EE,20337FC8,extended,00000007   // course
+patch=1,EE,20337FCC,extended,00000003   // laps
+patch=1,EE,20337FD4,extended,0000010E
+patch=1,EE,20337FD8,extended,0000000B
+patch=1,EE,20337FDC,extended,00000011
+patch=1,EE,20337FE0,extended,00000162
+patch=1,EE,20337FE4,extended,00000130
+patch=1,EE,20337FE8,extended,00000127
+patch=1,EE,20337FEC,extended,00000000
+patch=1,EE,20337FF0,extended,00000000
+patch=1,EE,20337FF4,extended,00000000
+patch=1,EE,20337FF8,extended,00000000
+patch=1,EE,20337FFC,extended,00000000
+patch=1,EE,20338000,extended,00000000
+patch=1,EE,20338004,extended,40333333
+patch=1,EE,20338008,extended,3FE66666
+patch=1,EE,2033800C,extended,40133333
+patch=1,EE,20338010,extended,408CCCCD
+patch=1,EE,20338014,extended,40833333
+patch=1,EE,20338018,extended,411E6666
+patch=1,EE,2033801C,extended,00000046
+patch=1,EE,20338020,extended,00000050
+patch=1,EE,20338024,extended,00000055
+patch=1,EE,20338028,extended,0000003C
+patch=1,EE,2033802C,extended,0000004B
+patch=1,EE,20338030,extended,00000041
+
+// ---- Round 14 (record 13): course 115, 2 laps
+//      Audi R8 (2004)[70] x1.3, V12 Vanquish[60] x3.4, Audi TT 3.2[65] x7.6, Lotus Elise 111S[85] x2.9, Golf R32[75] x6.1, Alfa 147 GTA[80] x5.4
+patch=1,EE,20338034,extended,00000073   // course
+patch=1,EE,20338038,extended,00000002   // laps
+patch=1,EE,20338040,extended,00000162
+patch=1,EE,20338044,extended,00000127
+patch=1,EE,20338048,extended,00000100
+patch=1,EE,2033804C,extended,000000D3
+patch=1,EE,20338050,extended,00000115
+patch=1,EE,20338054,extended,000000F5
+patch=1,EE,20338058,extended,00000000
+patch=1,EE,2033805C,extended,00000000
+patch=1,EE,20338060,extended,00000000
+patch=1,EE,20338064,extended,00000000
+patch=1,EE,20338068,extended,00000000
+patch=1,EE,2033806C,extended,00000000
+patch=1,EE,20338070,extended,3FA66666
+patch=1,EE,20338074,extended,4059999A
+patch=1,EE,20338078,extended,40F33333
+patch=1,EE,2033807C,extended,4039999A
+patch=1,EE,20338080,extended,40C33333
+patch=1,EE,20338084,extended,40ACCCCD
+patch=1,EE,20338088,extended,00000046
+patch=1,EE,2033808C,extended,0000003C
+patch=1,EE,20338090,extended,00000041
+patch=1,EE,20338094,extended,00000055
+patch=1,EE,20338098,extended,0000004B
+patch=1,EE,2033809C,extended,00000050
+
+// ---- Round 15 (record 14): course 20, 3 laps
+//      GT-ONE[85] x2.1, 787B[75] x4.8, R390 GT1[90] x2.1, Audi R8 (2004)[95] x2.0, CLK-DTM[70] x8.3, V12 Vanquish[80] x9.7
+patch=1,EE,203380A0,extended,00000014   // course
+patch=1,EE,203380A4,extended,00000003   // laps
+patch=1,EE,203380AC,extended,0000000B
+patch=1,EE,203380B0,extended,00000011
+patch=1,EE,203380B4,extended,0000010E
+patch=1,EE,203380B8,extended,00000162
+patch=1,EE,203380BC,extended,00000130
+patch=1,EE,203380C0,extended,00000127
+patch=1,EE,203380C4,extended,00000000
+patch=1,EE,203380C8,extended,00000000
+patch=1,EE,203380CC,extended,00000000
+patch=1,EE,203380D0,extended,00000000
+patch=1,EE,203380D4,extended,00000000
+patch=1,EE,203380D8,extended,00000000
+patch=1,EE,203380DC,extended,40066666
+patch=1,EE,203380E0,extended,4099999A
+patch=1,EE,203380E4,extended,40066666
+patch=1,EE,203380E8,extended,40000000
+patch=1,EE,203380EC,extended,4104CCCD
+patch=1,EE,203380F0,extended,411B3333
+patch=1,EE,203380F4,extended,00000055
+patch=1,EE,203380F8,extended,0000004B
+patch=1,EE,203380FC,extended,0000005A
+patch=1,EE,20338100,extended,0000005F
+patch=1,EE,20338104,extended,00000046
+patch=1,EE,20338108,extended,00000050
+
+// ---- Round 16 (record 15): course 7, 3 laps
+//      V12 Vanquish[80] x9.4, CLK-DTM[90] x3.3, Audi R8 (2004)[85] x2.5, R390 GT1[95] x1.8, GT-ONE[70] x3.3, 787B[75] x4.5
+patch=1,EE,2033810C,extended,00000007   // course
+patch=1,EE,20338110,extended,00000003   // laps
+patch=1,EE,20338118,extended,00000127
+patch=1,EE,2033811C,extended,00000130
+patch=1,EE,20338120,extended,00000162
+patch=1,EE,20338124,extended,0000010E
+patch=1,EE,20338128,extended,0000000B
+patch=1,EE,2033812C,extended,00000011
+patch=1,EE,20338130,extended,00000000
+patch=1,EE,20338134,extended,00000000
+patch=1,EE,20338138,extended,00000000
+patch=1,EE,2033813C,extended,00000000
+patch=1,EE,20338140,extended,00000000
+patch=1,EE,20338144,extended,00000000
+patch=1,EE,20338148,extended,41166666
+patch=1,EE,2033814C,extended,40533333
+patch=1,EE,20338150,extended,40200000
+patch=1,EE,20338154,extended,3FE66666
+patch=1,EE,20338158,extended,40533333
+patch=1,EE,2033815C,extended,40900000
+patch=1,EE,20338160,extended,00000050
+patch=1,EE,20338164,extended,0000005A
+patch=1,EE,20338168,extended,00000055
+patch=1,EE,2033816C,extended,0000005F
+patch=1,EE,20338170,extended,00000046
+patch=1,EE,20338174,extended,0000004B
+
+// ---- Round 17 (record 16): course 115, 2 laps
+//      CLK-DTM[80] x2.2, V12 Vanquish[85] x2.9, Audi R8 (2004)[95] x1.2, Audi TT 3.2[90] x6.3, Lotus Elise 111S[70] x9.9, Roadster RS[75] x9.9
+patch=1,EE,20338178,extended,00000073   // course
+patch=1,EE,2033817C,extended,00000002   // laps
+patch=1,EE,20338184,extended,00000130
+patch=1,EE,20338188,extended,00000127
+patch=1,EE,2033818C,extended,00000162
+patch=1,EE,20338190,extended,00000100
+patch=1,EE,20338194,extended,000000D3
+patch=1,EE,20338198,extended,00000003
+patch=1,EE,2033819C,extended,00000000
+patch=1,EE,203381A0,extended,00000000
+patch=1,EE,203381A4,extended,00000000
+patch=1,EE,203381A8,extended,00000000
+patch=1,EE,203381AC,extended,00000000
+patch=1,EE,203381B0,extended,00000000
+patch=1,EE,203381B4,extended,400CCCCD
+patch=1,EE,203381B8,extended,4039999A
+patch=1,EE,203381BC,extended,3F99999A
+patch=1,EE,203381C0,extended,40C9999A
+patch=1,EE,203381C4,extended,411E6666
+patch=1,EE,203381C8,extended,411E6666
+patch=1,EE,203381CC,extended,00000050
+patch=1,EE,203381D0,extended,00000055
+patch=1,EE,203381D4,extended,0000005F
+patch=1,EE,203381D8,extended,0000005A
+patch=1,EE,203381DC,extended,00000046
+patch=1,EE,203381E0,extended,0000004B
+
+// ---- Round 18 (record 17): course 20, 3 laps
+//      Audi R8 (2004)[92] x2.6, R390 GT1[84] x3.1, GT-ONE[100] x1.7, 787B[96] x2.9, CLK-DTM[80] x7.1, V12 Vanquish[88] x9.2
+patch=1,EE,203381E4,extended,00000014   // course
+patch=1,EE,203381E8,extended,00000003   // laps
+patch=1,EE,203381F0,extended,00000162
+patch=1,EE,203381F4,extended,0000010E
+patch=1,EE,203381F8,extended,0000000B
+patch=1,EE,203381FC,extended,00000011
+patch=1,EE,20338200,extended,00000130
+patch=1,EE,20338204,extended,00000127
+patch=1,EE,20338208,extended,00000000
+patch=1,EE,2033820C,extended,00000000
+patch=1,EE,20338210,extended,00000000
+patch=1,EE,20338214,extended,00000000
+patch=1,EE,20338218,extended,00000000
+patch=1,EE,2033821C,extended,00000000
+patch=1,EE,20338220,extended,40266666
+patch=1,EE,20338224,extended,40466666
+patch=1,EE,20338228,extended,3FD9999A
+patch=1,EE,2033822C,extended,4039999A
+patch=1,EE,20338230,extended,40E33333
+patch=1,EE,20338234,extended,41133333
+patch=1,EE,20338238,extended,0000005C
+patch=1,EE,2033823C,extended,00000054
+patch=1,EE,20338240,extended,00000064
+patch=1,EE,20338244,extended,00000060
+patch=1,EE,20338248,extended,00000050
+patch=1,EE,2033824C,extended,00000058
+
+// ---- Round 19 (record 18): course 7, 3 laps
+//      787B[97] x2.9, GT-ONE[91] x2.3, R390 GT1[100] x2.0, Audi R8 (2004)[85] x3.5, CLK-DTM[94] x4.2, V12 Vanquish[88] x9.9
+patch=1,EE,20338250,extended,00000007   // course
+patch=1,EE,20338254,extended,00000003   // laps
+patch=1,EE,2033825C,extended,00000011
+patch=1,EE,20338260,extended,0000000B
+patch=1,EE,20338264,extended,0000010E
+patch=1,EE,20338268,extended,00000162
+patch=1,EE,2033826C,extended,00000130
+patch=1,EE,20338270,extended,00000127
+patch=1,EE,20338274,extended,00000000
+patch=1,EE,20338278,extended,00000000
+patch=1,EE,2033827C,extended,00000000
+patch=1,EE,20338280,extended,00000000
+patch=1,EE,20338284,extended,00000000
+patch=1,EE,20338288,extended,00000000
+patch=1,EE,2033828C,extended,4039999A
+patch=1,EE,20338290,extended,40133333
+patch=1,EE,20338294,extended,40000000
+patch=1,EE,20338298,extended,40600000
+patch=1,EE,2033829C,extended,40866666
+patch=1,EE,203382A0,extended,411E6666
+patch=1,EE,203382A4,extended,00000061
+patch=1,EE,203382A8,extended,0000005B
+patch=1,EE,203382AC,extended,00000064
+patch=1,EE,203382B0,extended,00000055
+patch=1,EE,203382B4,extended,0000005E
+patch=1,EE,203382B8,extended,00000058

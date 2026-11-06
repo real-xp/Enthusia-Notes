@@ -18,6 +18,7 @@ Please note that the images here are compressed. Original images can be found on
   - [Drag Race](#drag-race)
   - [Ocean Bridge Illusion](#ocean-bridge-illusion)
   - [Official Playstation Magazine US](#official-playstation-magazine-us)
+  - [XS Magazine #09 2005](#xs-magazine-09-2005)
   - [Different VGS Versions](#different-vgs-versions)
   - [Different Game Version](#different-game-version)
   - [Game’s Tagline](#games-tagline)
@@ -45,6 +46,9 @@ Please note that the images here are compressed. Original images can be found on
   - [Game Builds](#game-builds)
     - [Official Playstation Magazine DEMO Disk](#official-playstation-magazine-demo-disk)
       - [From Internal Code](#from-internal-code)
+    - [Official Playstation Magazine DEMO 59 (OPS2M GERMAN) Disk](#official-playstation-magazine-demo-59-ops2m-german-disk)
+    - [Official Playstation 2 Magazine German Special 2/2005 Disk](#official-playstation-2-magazine-german-special-22005-disk)
+    - [Official Playstation Magazine DEMO 72 Disk](#official-playstation-magazine-demo-72-disk)
     - [Japan Trial Demo](#japan-trial-demo)
     - [US Demo](#us-demo)
     - [EU Demo](#eu-demo)
@@ -79,6 +83,8 @@ Please note that the images here are compressed. Original images can be found on
       - [ARTWORKS](#artworks)
       - [LOGO](#logo-1)
       - [SCREENSHOTS](#screenshots-1)
+  - [Game Manual And Disk](#game-manual-and-disk)
+  - [PSM DVD Issue 96, April 2005](#psm-dvd-issue-96-april-2005)
 - [Map Facts](#map-facts)
   - [Rev City](#rev-city)
   - [Route de La Seine](#route-de-la-seine)
@@ -189,6 +195,17 @@ The Magazine can be found on Internet Archive.
 *these are compressed images*
 
 Also, what a tagline - “Enthusia : At last! A racing game for statisticians”
+
+## XS Magazine #09 2005
+Enthusia was also mentioned in the XS Magazine issue 9 in 2005, on page 96 (digital).
+
+This can be accessed using the link - 
+https://archive.org/details/XSMagazine2005-09/page/96/mode/2up
+
+![XS-1](../assets/images/facts-and-glitches/xs1.png)
+![XS-2](../assets/images/facts-and-glitches/xs2.png)
+
+Thanks **King Jack (kingjackskellington)** for finding this! 
 
 ## Different VGS Versions
 In the preview and old demos of Enthusia (like the E3 2004 Build), the VGS icon display is different from the release version, only showing the car's lateral and longitudinal G-forces and car's real direction of travel relative to the player's view instead of the weight transfer and tyre grip display we have today.
@@ -332,6 +349,8 @@ This also seems to be from `April 2004`
 
 A showcase can be seen here - https://www.youtube.com/watch?v=LKWDqTi6pDo
 
+A much more detailed inspection in this build can be found on [opm91_us_build_details.md](opm91_us_build_details.md)
+
 Some features include
 - Three tracks
   - Speediapolis Ring
@@ -392,6 +411,38 @@ Some features include
 - In aspiration, they called `Turbocharged` `TB` in short form, which, uh, could be misinterpreted as `Tuberculosis`. No wonder they changed it in final game. Call it `Turboculosis`.
 - There does not seem to be a `F` class. Only `R, A, B, C, D, E` classes.
 - `Boxer` engine is called `Flat` engine.
+
+### Official Playstation Magazine DEMO 59 (OPS2M GERMAN) Disk
+`SCED-53207`
+
+It can be found on archive.org.
+
+The disk itself is german.
+
+This is very similar to the OPM build. There are some key differences
+- Music in speediapolis is the same is final game
+- No Mazda logo in 787B
+- 50Hz (PAL) Physics
+- Timers added in races
+- Metric units, English gameplay, but does not ask for language selection like other PAL games.
+- Black flag does not persist like the other PAL versions.
+- Burgenschlucht using the correct name on flags, but using the speediapolis ring music.
+
+Thanks Bogi76 for testing this!
+
+### Official Playstation 2 Magazine German Special 2/2005 Disk
+`SCED-53662`
+
+It can be found on archive.org.
+
+Same as the previous one.
+
+### Official Playstation Magazine DEMO 72 Disk
+`SCED-54051`
+
+It can be found on archive.org.
+
+Same as the previous one.
 
 ### Japan Trial Demo
 `SLPM-61110`
@@ -1046,6 +1097,16 @@ This logo is the original press logo and can be opened in program like Illustrat
 ![Screenshot9](../assets/images/facts-and-glitches/E32004_Press/Screenshots/Enthusia_Screenshot_09.jpg)
 ![Screenshot10](../assets/images/facts-and-glitches/E32004_Press/Screenshots/Enthusia_Screenshot_10.jpg)
 ![Screenshot11](../assets/images/facts-and-glitches/E32004_Press/Screenshots/Enthusia_Screenshot_11.jpg)
+
+## Game Manual And Disk
+The game's manual, disk, and the asset can be found here on - https://archive.org/details/image-001_20251027/Image001.jpg
+
+![manual](../assets/images/facts-and-glitches/manual.jpg)
+
+## PSM DVD Issue 96, April 2005
+Enthusia was also mentioned and is present in this.
+
+https://archive.org/details/psmdvd-issue-96/PSMDVD_APR05_Cover1.jpg
 
 # Map Facts
 ## Rev City

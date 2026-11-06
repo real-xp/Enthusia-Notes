@@ -1,0 +1,25 @@
+gametitle=Enthusia Professional Racing - OPM Demo Disc 91 (SCUS-97443) - Prize Race
+author=kingjack, realxp, AI assistance
+
+// title menu: 9 (Free Run) -> 10 (Prize Race)
+patch=1,EE,2017A774,extended,2410000A
+
+// Prize Race heap spec {3MB,0x600,27MB,0x80} -> {1MB,0x600,17.5MB,0x80}; the demo pool is only 20.75MB
+// (this is the real cause of the 0 FPS hang: 27MB alloc returns NULL)
+patch=1,EE,2032E2D0,extended,00100000
+patch=1,EE,2032E2D8,extended,01180000
+
+// disable the demo-disc watchdog that kicks you back to the OPM menu after ~5 min
+patch=1,EE,201FA0CC,extended,1000000A
+
+// optional tweaks (uncomment to use)
+// Starting funds 100 -> 500  (bet is ~10% of funds: 10G <101, 20G <251, 50G <501, 100G <1001, 200G <2501, 500G above)
+patch=1,EE,201632F8,extended,240401F4
+
+// Bigger bets at every funds level: table at 0x3F3C20 = {500,200,100,50,20,10} -> {1000,400,200,100,40,20}
+patch=1,EE,203F3C20,extended,000003E8
+//patch=1,EE,203F3C24,extended,00000190
+//patch=1,EE,203F3C28,extended,000000C8
+//patch=1,EE,203F3C2C,extended,00000064
+//patch=1,EE,203F3C30,extended,00000028
+// patch=1,EE,203F3C34,extended,00000014
